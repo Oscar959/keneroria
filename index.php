@@ -14,6 +14,7 @@
 <div class="row">
 <div class="offset-lg-2 col-lg-10 offset-lg-2 m-5">
 <form action="treatform" method="Post">
+<h1 class="te"> Formulaire d'inscription de l'admnin</h1>
 <div class="col-lg-6">
 <small class="text-primary"> Entrez votre nom</small>
 <input type="text" name="nom" id="nom" class="form-control">
@@ -58,6 +59,10 @@ $(document).ready(function(){
     // Change:
     // dbclick:
     //DOm: document object modal
+    //git init
+    // git status
+    // git * ou soit on peut ajouter par fichier
+    // git commit -m 
 
 })
 </script>
