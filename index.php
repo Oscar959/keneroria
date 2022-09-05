@@ -1,5 +1,5 @@
 <?php
-// la variable qui va contenir la connection à la base des données
+// la variable qui va contenir la connexion à la base des données
 $conn=mysqli_connect("localhost","root","","kenerozia");
 /*if ($conn) {
     echo '<p class="text-danger shadow text-center">connection reussie</p>';
@@ -39,7 +39,7 @@ $conn=mysqli_connect("localhost","root","","kenerozia");
             VALUES(NULL,'$nom','$prenom','$email','$phone','$adress','$mdp','$file_name')";
 
             $send= mysqli_query($conn,$query);
-            //cette fonction prend de paramettre() et cette fonction permet d'envoyé les informations qui viennnent de la db
+            //cette fonction prend deux paramettres() et cette fonction permet d'envoyé les informations qui viennnent de la db
     }
 
 
@@ -61,32 +61,25 @@ $conn=mysqli_connect("localhost","root","","kenerozia");
 <div class="row">
 <div class="offset-lg-2 col-lg-10 offset-lg-2 m-5">
 <form action="" method="Post" enctype="multipart/form-data">
-<h1 class="text-warning">Formulaire d'inscription de l'admnin</h1>
-<div class="col-lg-6">
-<small class="text-primary"> Entrez votre nom</small>
-<input type="text" name="nom" id="nom" class="form-control">
-
-<small class="text-primary"> Entrez votre prenom</small>
-<input type="text" name="prenom" id="prenom" class="form-control">
-
-<small class="text-primary"> Entrez votre email</small>
-<input type="text" name="email" id="email" class="form-control">
-
-<small class="text-primary"> Entrez votre phone</small>
-<input type="text" name="phone" id="phone" class="form-control">
-
-<small class="text-primary"> Entrez votre adresse</small>
-<textarea name="adress" id="adress" cols="30" rows="10" class="form-control">
-</textarea>
-
-<small class="text-primary"> Entrez votre photo</small>
-<input type="file" name="photo" id="photo" class="form-control">
-
-<small class="text-primary"> Entrez votre mot de passe</small>
-<input type="password" name="mdp" id="mdp" class="form-control">
-
-<input type="submit" name="send" id="Send" value="send" class="btn btn-info m-2">
-</div>
+        <h1 class="text-warning"> formulaire d'inscription de l'admit</h1>
+        <div class="col-lg-6">
+        <small class="text-primary"> entrez votre nom</small>
+        <input type="text" name=nom id="nom" class = form-control>
+        <small class="text-primary"> entrez votre prenom</small>
+        <input type="text" name="prenom" id="prenom" class = form-control>
+        <small class="text-primary"> entrez votre email</small>
+        <input type="text" name="email" id="email" class = form-control>
+        <small class="text-primary"> entrez votre phone</small>
+        <input type="text" name="phone" id="phone" class = form-control>
+        <small class="text-primary"> entrez votre adresse</small>
+        <textarea name="adress" id="adress" cols="30" rows="10" class="form-control">
+        </textarea>
+        <small class="text-primary"> entrez votre photo</small>
+        <input type="file" name="photo" id="photo" class = form-control>
+        <small class="text-primary"> entrez votre mot de pass</small>
+        <input type="password" name="mdp" id="mdp" class = form-control>
+        <input type="submit" value="send" name="send" class="btn-info m-2">
+        </div>
 </form>
 
 </div>
@@ -96,7 +89,7 @@ $conn=mysqli_connect("localhost","root","","kenerozia");
 <script>
 $(document).ready(function(){
     //lert("great");
-    // ready c'est un evenement qui s'execute
+    // ready c'est un evenement qui s'execute 
     //Les evenements java script:
     // Keyup:
     // keydown:
@@ -107,8 +100,8 @@ $(document).ready(function(){
     //DOm: document object modal
     //git init
     // git status
-    // git * ou soit on peut ajouter par fichier
-    // git commit -m 
+    // git add * ou soit on peut ajouter par fichier
+    // git commit -m "on a ajouté un formulaireb"
 
 })
 </script>
