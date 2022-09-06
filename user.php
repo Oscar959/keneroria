@@ -63,7 +63,7 @@ include('connect.php');
         <h1 class="text-warning"> formulaire d'inscription de l'utilisateur</h1>
         <div class="col-lg-6">
         <small class="text-primary"> entrez votre nom</small>
-        <input type="text" name=nom id="nom" class = form-control>
+        <input type="text" name="nom" id="nom" class = form-control>
         <small class="text-primary"> entrez votre prenom</small>
         <input type="text" name="prenom" id="prenom" class = form-control>
         <small class="text-primary"> entrez votre sexe</small>
