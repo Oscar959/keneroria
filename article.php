@@ -48,6 +48,10 @@ if (isset($_POST['send'])) {
 </form>
 </div>
 </div>
-    
+$(document).ready(function(){
+    //lert("great");
+
+})
+</script>
 </body>
 </html>
