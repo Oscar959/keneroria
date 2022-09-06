@@ -1,9 +1,6 @@
 <?php
-// la variable qui va contenir la connexion à la base des données
-$conn=mysqli_connect("localhost","root","","kenerozia");
-/*if ($conn) {
-    echo '<p class="text-danger shadow text-center">connection reussie</p>';
-}*/
+   include('connect.php');
+   
     if (isset($_POST['send'])){
         $nom= $_POST["nom"];
         $prenom= $_POST["prenom"];

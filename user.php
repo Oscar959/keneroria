@@ -1,6 +1,6 @@
 <?php
 // la variable qui va contenir la connexion à la base des données
-$conn=mysqli_connect("localhost","root","","kenerozia");
+include('connect.php');
 /*if ($conn) {
     echo '<p class="text-danger shadow text-center">connection reussie</p>';
 }*/
@@ -89,5 +89,12 @@ $conn=mysqli_connect("localhost","root","","kenerozia");
 
 </div>
 </div>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    //lert("great");
+
+})
+</script>
 </body>
 </html>
