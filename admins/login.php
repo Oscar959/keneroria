@@ -11,6 +11,8 @@ if (isset($_POST['nom'])) {
     $query="SELECT* FROM admin WHERE nom='$nom' and prenom='$prenom' and mdp='$mdp'";
  
     $r= mysqli_query($conn,$query);
+    
+    //mysqli_num_rows: c'est une methode qui cote des lignes de serveur. 
     if ($row= mysqli_num_rows($r)>0) {
         $_SESSION['nom']=$nom;
         $_SESSION['prenom']=$prenom;

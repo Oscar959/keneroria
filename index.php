@@ -32,7 +32,7 @@
 						$output= '<p class="alert alert-success">Please select a file</p>';
 					}
                  
-            $query="INSERT INTO admin(id,nom,prenom,email,phone,adress,photo,mdp) 
+            $query="INSERT INTO admin(id,nom,prenom,email,phone,adress,mdp,photo) 
             VALUES(NULL,'$nom','$prenom','$email','$phone','$adress','$mdp','$file_name')";
 
             $send= mysqli_query($conn,$query);
@@ -82,7 +82,7 @@
 </div>
 </div>
 <div class="col-md-6">
-<p> <a href="admins/login.php">connectez-vous</p>
+<p> <a href="admins/login.php">connectez-vous</a></p>
 </div>
 <script src="vendor/jquery/jquery.min.js"></script>
 <script>
