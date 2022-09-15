@@ -8,20 +8,19 @@ if (isset($_POST['nom'])) {
     $prenom= $_POST["prenom"];
     $mdp= $_POST["mdp"];
 
-    $query="SELECT* FROM admin WHERE nom='$nom' and prenom='$prenom' and mdp='$mdp'";
+    $query="SELECT* FROM utilisateur WHERE nom='$nom' and prenom='$prenom' and mpd='$mdp'";
  
     $r= mysqli_query($conn,$query);
 
-    //mysqli_num_rows: c'est une methode qui cote des lignes de serveur. 
+    //mysqli_num_rows: c'est une methode qui retourne le nombre des lignes de la requete. 
     if ($row= mysqli_num_rows($r)>0) {
         $_SESSION['nom']=$nom;
         $_SESSION['prenom']=$prenom;
         $_SESSION ['mdp']=$mdp;
         echo "<script>
-
         setInterval(function(){
-        window.location.replace('article.php');
-        },5000)
+        window.location.replace('lire_article.php');
+        },2000)
         </script>";
     }else {
         echo "vos informations ne sont pas dans la base des données; creez d'abord un compte";
