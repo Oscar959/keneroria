@@ -99,6 +99,10 @@
 
     </div>
 
+    <div id="messages-display" style="display:none">
+
+    </div>
+
 <!--
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="examplemodallabel" aria-hidden="true ">
         <div class="modal-dialog" role="document">
@@ -188,6 +192,7 @@ function recuperer(){
                     $(".tabeau-articles").css("display", "none");
                     $(".articles-display").css("display", "block");
                     $(".articles-display").html(data);
+                    recuperer_comment();
                 }
             });
         }
@@ -198,12 +203,54 @@ function recuperer(){
         $(".form-comment").css("display", "block");
    });
 
-   $(document).on('submit', '#users-comment', function(){
-    var name= $("#name").val();
+   $(document).on('submit', '#users-comment', function(e){
+    e.preventDefault();
+    var user_id= $("#user_id").val();
     var comment = $("#comment").val();
     var id_article = $("#id_article").val();
-   })
 
+    $.ajax({
+        url:"categories_users.php",
+        method:"POST",
+        data:{
+            user_id:user_id,
+            comment:comment,
+            id_article:id_article
+        },
+        success:function(data){
+            $(".tabeau-articles").css("display", "none");
+            $(".articles-display").css("display", "none");
+            $(".form-comment").css("display", "none");
+            $("#messages-display").html(data);
+            // la fonction affichant le commentaire
+
+        }
+    });
+   });
+
+
+
+   function recuperer_comment(){
+    var article = $("#id_article").val();
+    $.ajax({
+        url:"categories_users.php",
+        method:"POST",
+        data:{
+            article:article
+        },
+        success:function(data){
+            $(".tabeau-articles").css("display", "none");
+            $(".articles-display").css("display", "block");
+            $(".form-comment").css("display", "none");
+
+            // Je display block dans le but d'afficher le data venant de la base des données
+            $("#messages-display").css("display", "block");
+            $("#messages-display").html(data);
+
+
+        }
+    })
+   }
 })
 </script>
 </html>
