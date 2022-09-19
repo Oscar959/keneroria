@@ -21,6 +21,7 @@
     // FETCH: c'est une methode qui permet de parcourir les listes des données 
 
     while ($row=mysqli_fetch_array($resultat)) {
+         $id_user = $row['id'];
          $phone=$row['phone'];
          $photo=$row['photo'];
          $email=$row['email'];
@@ -98,12 +99,40 @@
 
     </div>
 
+<!--
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="examplemodallabel" aria-hidden="true ">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="h4">Commentaire</p>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="close"><span aria-hidden="true">x</span></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="users-comment">
+                        <small class="text-muted">Entrez le commentaire</small>
+                        <textarea name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+                        <input type="hidden" name="user_name">
+                        <input type="submit" class="btn btn-primary" value="send">
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ -->
 
 
 
     
 </body>
 <script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/jquery/bootstrap.min.js"></script>
+
 <script>
 // ready : c'est une fonction qui s'execution après le chargement de la page 
 // $(document): ça permet de parcourir le document(en html on appel le page)
@@ -123,6 +152,8 @@ $(document).ready(function(){
                 $('#s_categories').css('display','block');
                 $('#s_categories').html(data);
                 recuperer();
+                $(".articles-display").css("display", "none");
+                $(".tabeau-articles").css("display", "block");
 
             }
 
@@ -161,6 +192,17 @@ function recuperer(){
             });
         }
    });
+
+
+   $(document).on('click', '.comment-btn', function(){
+        $(".form-comment").css("display", "block");
+   });
+
+   $(document).on('submit', '#users-comment', function(){
+    var name= $("#name").val();
+    var comment = $("#comment").val();
+    var id_article = $("#id_article").val();
+   })
 
 })
 </script>
